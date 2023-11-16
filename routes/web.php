@@ -35,5 +35,18 @@ Route::get('/collapse1', function () {
 Route::get('/collapse2', function () {
     return view('collapse-2');
 });
+Route::get('/blog', function () {
+    return view('home');
+});
+Route::get('/blog/tentang', function () {
+    return view('tentang');
+});
+Route::get('/blog/kontak', function () {
+    return view('kontak');
+});
 Route::get('/', 'App\Http\Controllers\DosenController@index');
 Route::get('/biodata', 'App\Http\Controllers\DosenController@biodata');
+Route::get('testjam/{jam}','App\Http\Controllers\DosenController@showtime');
+Route::get('/formulir', 'App\Http\Controllers\PegawaiController@formulir');
+Route::post('/formulir/proses', 'App\Http\Controllers\PegawaiController@proses');
+

@@ -10,5 +10,7 @@
     <p>Nama : {{$nama}}</p>
     <p>Alamat : {{$Alamat}}</p>
     <p>Umur : {{$Umur}}</p>
+
+    <a href="testjam/{{date('G:i:s')}}">click here</a>
 </body>
 </html>
