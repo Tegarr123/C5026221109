@@ -64,7 +64,7 @@ class PegawaiController extends Controller
 	}
 
 	// update data pegawai
-	public function update(Request $request)
+	public function update(Request $request, $id)
 	{
 		// update data pegawai
 		DB::table('pegawai')->where('pegawai_id',$request->id)->update([
@@ -73,8 +73,8 @@ class PegawaiController extends Controller
 			'pegawai_umur' => $request->umur,
 			'pegawai_alamat' => $request->alamat
 		]);
+        return redirect('/pegawai/view/'.$id);
 		// alihkan halaman ke halaman pegawai
-		return redirect('/pegawai');
 	}
 
 	// method untuk hapus data pegawai
@@ -100,5 +100,10 @@ class PegawaiController extends Controller
 		return view('index',['pegawai' => $pegawai, 'cari' => $cari]);
 
 	}
+    public function view($id){
+        $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
+        return view('view', ['pegawai'=>$pegawai]);
+    }
+
 
 }

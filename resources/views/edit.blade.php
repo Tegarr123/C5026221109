@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html>
+@extends('master2')
 <head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
+        @foreach ($pegawai as $p)
+            <title>edit pegawai : {{$p->pegawai_nama}}</title>
+        @endforeach
 </head>
+
+@section('konten')
 <body>
 
 	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
@@ -14,16 +17,45 @@
 	<br/>
 
 	@foreach($pegawai as $p)
-	<form action="/pegawai/update" method="post">
+	<form action="/pegawai/update/{{$p->pegawai_id}}" method="post">
 		{{ csrf_field() }}
-		<input type="hidden" name="id" value="{{ $p->pegawai_id }}"> <br/>
-		Nama <input type="text" required="required" name="nama" value="{{ $p->pegawai_nama }}"> <br/>
-		Jabatan <input type="text" required="required" name="jabatan" value="{{ $p->pegawai_jabatan }}"> <br/>
-		Umur <input type="number" required="required" name="umur" value="{{ $p->pegawai_umur }}"> <br/>
-		Alamat <textarea required="required" name="alamat">{{ $p->pegawai_alamat }}</textarea> <br/>
+        <div class="row">
+            <div class="col-5">
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="nama" class="col-xs-3 col-form-label mr-3">Nama:</label>
+                    </div>
+                    <div class="col-9">
+                        <input required="required"  type="text" class="form-control" id="nama" name="nama" value="{{ $p->pegawai_nama }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="jabatan" class="col-xs-3  col-form-label mr-3" >Jabatan:</label>
+                    </div>
+                    <div class="col-9">
+                        <input required="required" type="text" class="form-control" id="jabatan" name="jabatan" value="{{ $p->pegawai_jabatan }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="umur" class="col-xs-3  col-form-label mr-3">Umur:</label>
+                    </div>
+                    <div class="col-9">
+                        <input required="required" type="number" class="form-control" id="umur" name="umur" value="{{ $p->pegawai_umur }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="alamat" class="col-xs-3  col-form-label mr-3">Alamat:</label>
+                    </div>
+                    <div class="col-9">
+                        <textarea required="required" name="alamat" id="alamat" cols="40" rows="5">{{ $p->pegawai_alamat }}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
 		<input type="submit" value="Simpan Data">
 	</form>
 	@endforeach
-
-</body>
-</html>
+@endsection
