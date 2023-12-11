@@ -14,10 +14,10 @@ class KategoriController extends Controller
 	}
     public function comboRequest(Request $request){
         $kategori = DB::table('kategori')->where('Nama',$request->pilihkategori)->get();
-        return redirect('hasilcombo/'.$kategori->ID);
+        return redirect('hasilcombo/'.$request->pilihkategori);
     }
-    public function hasilcombo($id){
-        $kategori = DB::table('kategori')->where('ID',$id)->get();
+    public function hasilcombo($kat){
+        $kategori = DB::table('kategori')->where('Nama',$kat)->get();
         return view('hasilcombo', ['kategori'=>$kategori]);
     }
 }
