@@ -35,6 +35,7 @@
               <a class="dropdown-item" href="/nilaikuliah">Nilai Kuliah</a>
               <a class="dropdown-item" href="/keranjangbelanja">keranjang belanja</a>
               <a class="dropdown-item" href="/agen">agen</a>
+              <a class="dropdown-item" href="/kategori">kategori</a>
             </div>
           </li>
         </ul>

@@ -76,3 +76,8 @@ Route::post('/agen/update/{kodeagen}','App\Http\Controllers\AgenController@updat
 Route::get('/agen/hapus/{kodeagen}','App\Http\Controllers\AgenController@hapusAgen');
 Route::get('/agen/cari','App\Http\Controllers\AgenController@cariAgen');
 Route::get('/agen/view/{kodeagen}', 'App\Http\Controllers\AgenController@viewAgen');
+
+Route::get('/hasilcombo/{id}', 'App\Http\Controllers\KategoriController@hasilcombo');
+Route::get('/combo', 'App\Http\Controllers\KategoriController@combo');
+Route::get('/comboRequest', 'App\Http\Controllers\KategoriController@comboRequest');
+
