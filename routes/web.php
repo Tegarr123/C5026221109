@@ -56,7 +56,6 @@ Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
 Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiController@edit');
 Route::post('/pegawai/update/{id}','App\Http\Controllers\PegawaiController@update');
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus');
-
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 Route::get('/pegawai/view/{id}', 'App\Http\Controllers\PegawaiController@view');
 
@@ -68,3 +67,12 @@ Route::get('/keranjangbelanja','App\Http\Controllers\KeranjangController@index')
 Route::get('/keranjangbelanja/beli','App\Http\Controllers\KeranjangController@beli');
 Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangController@store');
 Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangController@hapus');
+
+Route::get('/agen','App\Http\Controllers\AgenController@agen');
+Route::get('/agen/tambah','App\Http\Controllers\AgenController@tambahAgen');
+Route::post('/agen/store','App\Http\Controllers\AgenController@storeAgen');
+Route::get('/agen/edit/{kodeagen}','App\Http\Controllers\AgenController@editAgen');
+Route::post('/agen/update/{kodeagen}','App\Http\Controllers\AgenController@updateAgen');
+Route::get('/agen/hapus/{kodeagen}','App\Http\Controllers\AgenController@hapusAgen');
+Route::get('/agen/cari','App\Http\Controllers\AgenController@cariAgen');
+Route::get('/agen/view/{kodeagen}', 'App\Http\Controllers\AgenController@viewAgen');
